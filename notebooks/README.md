@@ -18,12 +18,54 @@
 This project involves performing an **Exploratory Data Analysis (EDA)** on an insurance dataset to uncover insights and patterns that help understand key factors influencing insurance charges. The main objective of this analysis is to identify trends, correlations, and other important features that may inform decision-making or predictive modeling.  
 
 
-
 ## **Dataset Description**  
-The dataset contains information on insurance charges based on various factors such as demographic details, health conditions, and lifestyle choices. Below are the key features included in the dataset:  
- 
+The dataset provides comprehensive information about insurance policies, transactions, client details, client locations, and vehicles insured. Below are the key features included in the dataset:
 
+### **Policy Details**
+- **UnderwrittenCoverID**: Unique identifier for the underwritten cover.  
+- **PolicyID**: Unique identifier for the policy.  
+- **TransactionDate**: Date of the transaction.  
+- **TransactionMonth**: Month of the transaction.  
 
+### **Client Information**
+- **IsVATRegistered**: Indicates whether the client is registered for VAT.  
+- **Citizenship**: Client's nationality.  
+- **LegalType**: Legal entity type of the client (e.g., individual, company).  
+- **Title**: Title of the client (e.g., Mr., Mrs., Dr.).  
+- **Language**: Preferred language of the client.  
+- **Bank**: Bank associated with the client's account.  
+- **AccountType**: Type of bank account (e.g., savings, current).  
+- **MaritalStatus**: Marital status of the client (e.g., single, married).  
+- **Gender**: Gender of the client.  
+
+### **Client Location**
+- **Country**: Country of residence.  
+- **Province**: Province of residence.  
+- **PostalCode**: Client's postal code.  
+- **MainCrestaZone**: Primary Cresta zone for insurance purposes.  
+- **SubCrestaZone**: Subzone under the main Cresta zone.  
+
+### **Vehicle Details**
+- **ItemType**: Type of item insured (e.g., car).  
+- **Mmcode**: Manufacturer and model code of the vehicle.  
+- **VehicleType**: Type of vehicle (e.g., SUV, sedan).  
+- **RegistrationYear**: Year of vehicle registration.  
+- **Make**: Manufacturer of the vehicle.  
+- **Model**: Specific model of the vehicle.  
+- **Cylinders**: Number of engine cylinders.  
+- **CubicCapacity**: Engine size in cubic capacity.  
+- **Kilowatts**: Vehicle's power in kilowatts.  
+- **BodyType**: Type of vehicle body (e.g., hatchback, sedan).  
+- **NumberOfDoors**: Number of doors on the vehicle.  
+- **VehicleIntroDate**: Date when the vehicle was introduced to the market.  
+- **CustomValueEstimate**: Estimated value of vehicle customizations.  
+- **AlarmImmobiliser**: Indicates whether the vehicle has an alarm or immobilizer system.  
+- **TrackingDevice**: Indicates whether the vehicle is equipped with a tracking device.  
+- **CapitalOutstanding**: Outstanding capital amount for the insured vehicle.  
+- **NewVehicle**: Whether the vehicle is new or pre-owned.  
+- **WrittenOff**: Indicates if the vehicle has been written off.  
+- **Rebuilt**: Indicates if the vehicle has been rebuilt.  
+- **Converted**: Indicates if the vehicle has been converted (e.g., for different use).  
 
 ## **Key Insights**  
 
