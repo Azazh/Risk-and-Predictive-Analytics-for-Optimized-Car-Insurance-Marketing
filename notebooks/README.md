@@ -46,7 +46,7 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/Azazh/Risk-and-Predictive-Analytics-for-Optimized-Car-Insurance-Marketing.git
+git clone <repository-url>
 Install the required libraries:
 
 bash
@@ -64,4 +64,5 @@ Extend the analysis to include predictive modeling using regression techniques.
 Investigate feature engineering for improving data insights.
 Apply clustering to identify groups of individuals with similar insurance costs.
 Acknowledgments
-Special thanks to [source of the dataset] for providing the data and to the open-source Python community for the amazing libraries and tools.
+Special thanks to 10-Academy for providing the data and to the open-source Python community for the amazing libraries and tools.
+
