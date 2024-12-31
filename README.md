@@ -1,125 +1,109 @@
-
-# **Exploratory Data Analysis on Insurance Dataset**
+# **Risk and Predictive Analytics for Car Insurance**
 
 ## **Table of Contents**
-- [Project Overview](#project-overview)  
-- [Dataset Description](#dataset-description)  
-- [Key Insights](#key-insights)  
-- [Features Analyzed](#features-analyzed)  
-- [Data Visualizations](#data-visualizations)  
-- [Tools and Libraries Used](#tools-and-libraries-used)  
-- [Setup and Execution](#setup-and-execution)  
-- [Future Improvements](#future-improvements)  
-- [Acknowledgments](#acknowledgments)  
+- [Project Overview](#project-overview)
+- [Dataset Description](#dataset-description)
+- [Key Tasks](#key-tasks)
+  - [Exploratory Data Analysis](#exploratory-data-analysis)
+  - [Model Development](#model-development)
+  - [A/B Hypothesis Testing](#a-b-hypothesis-testing)
+- [Key Insights](#key-insights)
+- [Tools and Libraries](#tools-and-libraries)
+- [Setup and Execution](#setup-and-execution)
+- [Future Enhancements](#future-enhancements)
 
 
 
-## **Project Overview**  
-This project involves performing an **Exploratory Data Analysis (EDA)** on an insurance dataset to uncover insights and patterns that help understand key factors influencing insurance charges. The main objective of this analysis is to identify trends, correlations, and other important features that may inform decision-making or predictive modeling.  
-
-
-## **Dataset Description**  
-The dataset provides comprehensive information about insurance policies, transactions, client details, client locations, and vehicles insured. Below are the key features included in the dataset:
-
-### **Policy Details**
-- **UnderwrittenCoverID**: Unique identifier for the underwritten cover.  
-- **PolicyID**: Unique identifier for the policy.  
-- **TransactionDate**: Date of the transaction.  
-- **TransactionMonth**: Month of the transaction.  
-
-### **Client Information**
-- **IsVATRegistered**: Indicates whether the client is registered for VAT.  
-- **Citizenship**: Client's nationality.  
-- **LegalType**: Legal entity type of the client (e.g., individual, company).  
-- **Title**: Title of the client (e.g., Mr., Mrs., Dr.).  
-- **Language**: Preferred language of the client.  
-- **Bank**: Bank associated with the client's account.  
-- **AccountType**: Type of bank account (e.g., savings, current).  
-- **MaritalStatus**: Marital status of the client (e.g., single, married).  
-- **Gender**: Gender of the client.  
-
-### **Client Location**
-- **Country**: Country of residence.  
-- **Province**: Province of residence.  
-- **PostalCode**: Client's postal code.  
-- **MainCrestaZone**: Primary Cresta zone for insurance purposes.  
-- **SubCrestaZone**: Subzone under the main Cresta zone.  
-
-### **Vehicle Details**
-- **ItemType**: Type of item insured (e.g., car).  
-- **Mmcode**: Manufacturer and model code of the vehicle.  
-- **VehicleType**: Type of vehicle (e.g., SUV, sedan).  
-- **RegistrationYear**: Year of vehicle registration.  
-- **Make**: Manufacturer of the vehicle.  
-- **Model**: Specific model of the vehicle.  
-- **Cylinders**: Number of engine cylinders.  
-- **CubicCapacity**: Engine size in cubic capacity.  
-- **Kilowatts**: Vehicle's power in kilowatts.  
-- **BodyType**: Type of vehicle body (e.g., hatchback, sedan).  
-- **NumberOfDoors**: Number of doors on the vehicle.  
-- **VehicleIntroDate**: Date when the vehicle was introduced to the market.  
-- **CustomValueEstimate**: Estimated value of vehicle customizations.  
-- **AlarmImmobiliser**: Indicates whether the vehicle has an alarm or immobilizer system.  
-- **TrackingDevice**: Indicates whether the vehicle is equipped with a tracking device.  
-- **CapitalOutstanding**: Outstanding capital amount for the insured vehicle.  
-- **NewVehicle**: Whether the vehicle is new or pre-owned.  
-- **WrittenOff**: Indicates if the vehicle has been written off.  
-- **Rebuilt**: Indicates if the vehicle has been rebuilt.  
-- **Converted**: Indicates if the vehicle has been converted (e.g., for different use).  
-
-## **Key Insights**  
+## **Project Overview**
+This project leverages an insurance dataset to analyze and model key factors influencing car insurance risk, profitability, and customer segmentation. The tasks include exploratory data analysis (EDA), predictive modeling, and hypothesis testing to inform business decisions and optimize marketing strategies.
 
 
 
-## **Features Analyzed**  
-- **Univariate Analysis** 
-- **Bivariate Analysis** 
-- **Multivariate Analysis**
-
-
-## **Data Visualizations**  
-- **Histograms**: Age, BMI, and charges distributions.  
-- **Boxplots**: Charges across smoker status and regions.  
-- **Scatter Plots**: Correlations between charges and age/BMI.  
-- **Heatmap**: Correlation matrix of numerical features.  
-
-
-## **Tools and Libraries Used**  
-- **Python**  
-  - `pandas`: For data manipulation and cleaning.  
-  - `numpy`: For numerical computations.  
-  - `matplotlib` and `seaborn`: For data visualization.  
+## **Dataset Description**
+The dataset includes policy details, client demographics, geographical data, and vehicle attributes. Notable features:
+- **Policy Details**: PolicyID, TransactionDate, TransactionMonth.
+- **Client Information**: Gender, MaritalStatus, Citizenship, Province.
+- **Vehicle Details**: Make, Model, VehicleAge, CubicCapacity, Kilowatts.
 
 
 
-## **Setup and Execution**  
-1. Clone the repository:  
+## **Key Tasks**
+
+### **Exploratory Data Analysis**
+- **Objective**: Identify patterns, correlations, and key drivers influencing insurance costs.
+- **Insights**: Histograms, scatter plots, and heatmaps highlighted significant relationships between features like vehicle age and premium costs.
+
+### **Model Development**
+#### **Data Preparation**
+- **Data Cleaning**: Handled missing values and outliers.
+- **Feature Engineering**: Created derived features such as `CalculatedPremiumPerTerm`.
+- **Data Splitting**: Train-test split (80-20).
+
+#### **Model Building**
+Developed and compared the following models:
+- **Linear Regression**
+- **Random Forest**
+- **XGBoost**
+
+#### **Model Evaluation**
+Metrics used:
+- Mean Absolute Error (MAE)
+- Mean Squared Error (MSE)
+- R-squared (R²)
+
+**Performance Summary**:
+- **Random Forest**: Best performance with an R² of 0.305.
+- **XGBoost**: Comparable with an R² of 0.317.
+- **Linear Regression**: Baseline with lower performance.
+
+#### **Model Interpretability**
+Feature importance was visualized for Random Forest and XGBoost, revealing key drivers such as `CalculatedPremiumPerTerm` and `PolicyID`.
+
+### **A/B Hypothesis Testing**
+#### **Objective**
+Test differences in risk and profitability across categories such as provinces, zip codes, and gender.
+
+#### **Methodology**
+- Selected KPI: **TotalClaims**.
+- Groups:
+  - Province (e.g., Gauteng vs. Western Cape).
+  - Gender (e.g., Women vs. Men).
+- Statistical Tests: T-tests and Chi-squared tests.
+- **Result**: Null hypotheses were largely not rejected, indicating no significant differences in tested metrics.
+
+
+
+## **Key Insights**
+- **Premium Drivers**: `CalculatedPremiumPerTerm` and `PolicyID` consistently ranked as top predictive features.
+- **Risk Patterns**: Statistical tests suggest limited variability in risk across certain demographics.
+- **Model Efficacy**: Ensemble methods (Random Forest and XGBoost) significantly outperformed linear models in predicting insurance metrics.
+
+
+
+## **Tools and Libraries**
+- **Python Libraries**: `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`, `xgboost`.
+- **Statistical Testing**: T-tests, Chi-squared tests via `scipy`.
+
+
+
+## **Setup and Execution**
+1. Clone the repository:
    ```bash
-   git clone https://github.com/Azazh/Risk-and-Predictive-Analytics-for-Optimized-Car-Insurance-Marketing.git
-     
-
-2. Install the required libraries:  
+   git clone https://github.com/YourRepo/RiskAnalytics.git
+   ```
+2. Install required libraries:
    ```bash
    pip install -r requirements.txt
-
-3. Run the EDA script:  
-   ```bash
-   python insuranceEda.ipynb
-     
-
-4. View the outputs (graphs, tables, and insights) in the console or saved output directory.  
+   ```
+3. Run the notebook file:
 
 
 
-## **Future Improvements**  
-- Extend the analysis to include predictive modeling using regression techniques.  
-- Investigate feature engineering for improving data insights.  
-- Apply clustering to identify groups of individuals with similar insurance costs.  
 
-
-
-## **Acknowledgments**  
-Special thanks to 10-acadaemy for providing the data and to the open-source Python community for the amazing libraries and tools.  
+## **Future Enhancements**
+- Incorporate advanced feature selection techniques.
+- Implement clustering to identify high-risk customer segments.
+- Extend hypothesis testing to additional variables for deeper insights.
 
 
 
