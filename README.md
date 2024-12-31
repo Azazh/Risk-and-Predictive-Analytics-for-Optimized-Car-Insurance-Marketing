@@ -89,16 +89,14 @@ Test differences in risk and profitability across categories such as provinces, 
 ## **Setup and Execution**
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YourRepo/RiskAnalytics.git
+   git clone https://github.com/Azazh/Risk-and-Predictive-Analytics-for-Optimized-Car-Insurance-Marketing.git
    ```
 2. Install required libraries:
    ```bash
    pip install -r requirements.txt
    ```
-3. Run the analysis:
-   ```bash
-   python analysis_script.py
-   ```
+3. Run the notebook files:
+
 
 
 
